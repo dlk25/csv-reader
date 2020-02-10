@@ -1,9 +1,9 @@
 #include "capture.hpp"
-
+/*
 Capture::Capture(){
 
 }
-
+*/
 Capture::Capture(std::string fileName){
 	numSensors = 0;
 	std::ifstream fileIn;
@@ -88,6 +88,14 @@ std::string Capture::UnusedSensors(){
 void Capture::ChangeValues(int soi, double value){
 	sensors.at(soi).ChangeValue(value);
 }
+//FIXME IN DEVELOPMENT
+void Capture::RandomChanges(int toChange){
+	for(int i = 0; i < toChange; i++){
+		int random = rand() % numSensors;
+		sensors.at(random).ChangeRandomValue();
+	}
+}
+//**************************************************
 
 void Capture::WriteFile(std::string fileName){
 	std::ofstream fileOut;

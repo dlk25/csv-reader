@@ -22,6 +22,7 @@ class Capture
 		Capture(std::string);
 		void ParseSensors(std::string);
 		void ChangeValues(int, double);
+		void RandomChanges(int);
 		std::string GetSensors();
 		std::string GetUsedSensors();
 		std::string UnusedSensors();

@@ -18,6 +18,7 @@ class Sensor
 		std::string GetMax();
 		std::string GetAvg();
 		void ChangeValue(double);
+		void ChangeRandomValue();
 	
 };
 #endif

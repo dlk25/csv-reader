@@ -57,3 +57,12 @@ void Sensor::ChangeValue(double value){
 		values.at(i) += value;
 	}
 }
+//FIXME In development *****************************
+void Sensor::ChangeRandomValue(){
+	int toChange = rand() % values.size() + 1;
+	std::cout << "Location to Change: " << toChange << std::endl;
+	int changeBy = rand() % (2 * std::stoi(GetMax()) + 1);
+	std::cout << "Amount to Change: " << changeBy << std::endl << std::endl;
+	//values.at() += value;
+}
+//*******************************************
