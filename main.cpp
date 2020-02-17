@@ -15,7 +15,7 @@ int main(){
 	//Capture capture();
 	//std::cout << "Press \"Y/y\" to use default input and output files: ";//FIXME
 	//if(defVal == 'y' || defVal =='Y'){
-		Capture capture(/*"../EcuSim_19-11-04/CSVLog_20191031_125215.csv*/"testin.csv");
+		Capture capture(/*"../EcuSim_19-11-04/CSVLog_20191031_125215.csv*/"./Input-Files/testin.csv");
 	//}
 	//else{
 	//	std::cout << "\nEnter the full name and relative path of the .csv file to import: ";
@@ -82,7 +82,7 @@ int main(){
 		std::cout << "Unused sensors are:\n";
 		std::cout << capture.UnusedSensors();
 	}
-	capture.WriteFile("testout.csv");
+	capture.WriteFile("./Output-Files/testout.csv");
 
 	return 0;
 }

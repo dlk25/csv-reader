@@ -9,7 +9,7 @@ main: $(OBJECTS) main.o
 
 clean:
 	rm -rf main.dSYM
-	$(RM) *.o *.gc* test/*.o test/*.gc* *.dSYM test/test core main testout.csv
+	$(RM) *.o *.gc* test/*.o test/*.gc* *.dSYM test/test core main ./Output-Files/testout.csv
 
 testBuild: $(OBJECTS) test/test.o
 	$(CXX) $(CXXFLAGS) -o test/test $^
