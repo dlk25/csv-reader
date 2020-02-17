@@ -10,6 +10,7 @@ int main(){
 	char repeat = 'n';
 	char list = 'f';
 	char method = 'l';
+	srand(time(NULL));
 	//char defVal = 'y';
 	//Capture capture();
 	//std::cout << "Press \"Y/y\" to use default input and output files: ";//FIXME
