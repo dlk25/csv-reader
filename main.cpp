@@ -11,17 +11,21 @@ int main(){
 	char list = 'f';
 	char method = 'l';
 	srand(time(NULL));
-	//char defVal = 'y';
-	//Capture capture();
-	//std::cout << "Press \"Y/y\" to use default input and output files: ";//FIXME
-	//if(defVal == 'y' || defVal =='Y'){
-		Capture capture(/*"../EcuSim_19-11-04/CSVLog_20191031_125215.csv*/"./Input-Files/testin.csv");
-	//}
-	//else{
-	//	std::cout << "\nEnter the full name and relative path of the .csv file to import: ";
-	//	std::cin >> fname;
-	//	Capture capture(fname);
-	//}
+	char defVal = 'y';
+	Capture capture("./Input-Files/testin.csv");//FIXME
+	std::cout << "Press \"Y/y\" to use default input and output files: ";//FIXME
+	std::cin >> defVal;
+	if(defVal == 'y' || defVal =='Y'){
+	      	Capture capture("./Input-Files/testin.csv");
+	}
+	else{
+		do{
+			std::cout << "\nEnter the name of the .csv file (with extension) you placed in the folder: ";
+			std::cin >> fname;
+		}while(fname.find(".csv") == std::string::npos);
+		fname = "./Input-Files/" + fname;
+		Capture capture(fname);
+	}
 	
 	if(capture.UnusedSensors() != ""){
 		std::cout << "Press \"F/f\" to show the full list of sensors, otherwise only used sensors will be shown: ";
@@ -38,7 +42,7 @@ int main(){
 	}
 	do{
 		while(method != 'r' && method != 'R' && method != 'm' && method != 'M' && method != 'x' && method != 'X'){
-			std::cout << "Press \"R\" to randomly inject bad data into the file.\n";
+			std::cout << "\nPress \"R\" to randomly inject bad data into the file.\n";
 			std::cout << "Press \"M\" to manually change all values in a field to a constant.\n";
 			std::cout << "Press \"X\" to quit selection.\n";
 			std::cin >> method;

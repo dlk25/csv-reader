@@ -1,9 +1,8 @@
 #include "capture.hpp"
-/*
-Capture::Capture(){
 
+Capture::Capture(){
 }
-*/
+
 Capture::Capture(std::string fileName){
 	numSensors = 0;
 	std::ifstream fileIn;
